@@ -119,9 +119,15 @@ $$
 
 ## Output
 Final Q-table:
+<img width="367" height="387" alt="image" src="https://github.com/user-attachments/assets/e45c265b-6fe6-4f49-9c6d-02fcbd3acfad" />
+
 Estimated State-Value Function:
+<img width="402" height="160" alt="image" src="https://github.com/user-attachments/assets/0339347c-bf28-4b9f-a99e-c65844e5edba" />
+
 Learned Policy:
-Average reward over last 1000 episodes:
+<img width="527" height="152" alt="image" src="https://github.com/user-attachments/assets/c54856d1-f219-4f52-8646-8e19430690f7" />
+
+Average reward over last 1000 episodes:0.985
 <img width="891" height="597" alt="image" src="https://github.com/user-attachments/assets/15c83df1-6dc2-4904-9591-b92e3dd1266e" />
  
 ```
