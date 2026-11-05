@@ -125,20 +125,10 @@ Final Q-table:
 
 
 Estimated State-Value Function:
-
-
-
-
-
-
-
 Learned Policy:
-
-
-
-
-
-Average reward over last 1000 episodes: 
+Average reward over last 1000 episodes:
+<img width="891" height="597" alt="image" src="https://github.com/user-attachments/assets/15c83df1-6dc2-4904-9591-b92e3dd1266e" />
+ 
 ```
 
 
