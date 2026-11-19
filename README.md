@@ -109,7 +109,50 @@ $$
 
 
 ```python
-# Write your code here
+for fixed epsilon
+# -------------------------------------------------
+# Monte Carlo Control
+# -------------------------------------------------
+
+# Define the missing hyperparameter used in generate_episode
+max_steps_per_episode = 100
+
+epsilon = epsilon_start
+
+for episode_num in range(num_episodes):
+
+    # Generate a complete episode
+    episode = generate_episode(epsilon)
+
+    G = 0
+    visited = set()
+
+    # Calculate returns backwards
+    for state, action, reward in reversed(episode):
+
+        G = reward + gamma * G
+
+        # First-visit Monte Carlo
+        if (state, action) not in visited:
+
+            visited.add((state, action))
+
+            # Update Q-value
+            Q[state, action] += alpha * (
+                G - Q[state, action]
+            )
+
+    # Store episode reward
+    total_reward = sum(
+        step[2] for step in episode
+    )
+
+    episode_rewards.append(total_reward)
+
+   
+
+print("Monte Carlo Control Training Completed!")
+print("Final Epsilon:", epsilon)
 
 
 
@@ -119,15 +162,30 @@ $$
 
 ## Output
 Final Q-table:
+for fixed epsilon
+<img width="296" height="382" alt="image" src="https://github.com/user-attachments/assets/e5b0ba36-7630-456b-92f5-bb285286065d" />
+for variable epsilon
 <img width="367" height="387" alt="image" src="https://github.com/user-attachments/assets/e45c265b-6fe6-4f49-9c6d-02fcbd3acfad" />
 
 Estimated State-Value Function:
+for fixed epsilon
+<img width="430" height="176" alt="image" src="https://github.com/user-attachments/assets/134d15db-92b6-4802-b422-39aed1e65b00" />
+
+for variable epsilon  
 <img width="402" height="160" alt="image" src="https://github.com/user-attachments/assets/0339347c-bf28-4b9f-a99e-c65844e5edba" />
 
 Learned Policy:
+for fixed epsilon
+<img width="242" height="135" alt="image" src="https://github.com/user-attachments/assets/6f9b0c89-8bc4-4002-8ede-e9d9a923420f" />
+
+for variable epsilon
 <img width="527" height="152" alt="image" src="https://github.com/user-attachments/assets/c54856d1-f219-4f52-8646-8e19430690f7" />
 
-Average reward over last 1000 episodes:0.985
+Average reward over last 1000 episodes:
+for fixed epsilon
+<img width="557" height="50" alt="image" src="https://github.com/user-attachments/assets/823c1ae4-bb7d-4d6c-90e8-b714516f0e0a" />
+
+for variable epsilon
 <img width="891" height="597" alt="image" src="https://github.com/user-attachments/assets/15c83df1-6dc2-4904-9591-b92e3dd1266e" />
  
 ```
