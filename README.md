@@ -207,7 +207,8 @@ Average reward over last 1000 episodes:
 
 for fixed epsilon
 
-<img width="557" height="50" alt="image" src="https://github.com/user-attachments/assets/823c1ae4-bb7d-4d6c-90e8-b714516f0e0a" />
+<img width="923" height="626" alt="image" src="https://github.com/user-attachments/assets/8cb2e7a0-9126-48ce-a187-3334f29b883e" />
+
 
 
 
